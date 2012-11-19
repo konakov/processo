@@ -1,0 +1,24 @@
+<% title "Process" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @process.name %>
+</p>
+<p>
+  <strong>Goal:</strong>
+  <%= @process.goal %>
+</p>
+<p>
+  <strong>Person:</strong>
+  <%= @process.person_id %>
+</p>
+<p>
+  <strong>Organization:</strong>
+  <%= @process.organization_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_process_path(@process) %> |
+  <%= link_to "Destroy", @process, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", processes_path %>
+</p>

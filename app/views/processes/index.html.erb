@@ -1,0 +1,23 @@
+<% title "Processes" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Goal</th>
+    <th>Person</th>
+    <th>Organization</th>
+  </tr>
+  <% for process in @processes %>
+    <tr>
+      <td><%= process.name %></td>
+      <td><%= process.goal %></td>
+      <td><%= process.person_id %></td>
+      <td><%= process.organization_id %></td>
+      <td><%= link_to "Show", process %></td>
+      <td><%= link_to "Edit", edit_process_path(process) %></td>
+      <td><%= link_to "Destroy", process, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Process", new_process_path %></p>

@@ -1,0 +1,15 @@
+one:
+  name: MyString
+  email: MyString
+  level_id: 1
+  organization_id: 1
+  active: false
+  information: MyText
+
+two:
+  name: MyString
+  email: MyString
+  level_id: 1
+  organization_id: 1
+  active: false
+  information: MyText

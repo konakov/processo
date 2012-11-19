@@ -1,0 +1,28 @@
+<% title "Operation" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @operation.name %>
+</p>
+<p>
+  <strong>Goal:</strong>
+  <%= @operation.goal %>
+</p>
+<p>
+  <strong>Instruction:</strong>
+  <%= @operation.instruction %>
+</p>
+<p>
+  <strong>In:</strong>
+  <%= @operation.in %>
+</p>
+<p>
+  <strong>Out:</strong>
+  <%= @operation.out %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_operation_path(@operation) %> |
+  <%= link_to "Destroy", @operation, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", operations_path %>
+</p>

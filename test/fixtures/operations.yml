@@ -1,0 +1,13 @@
+one:
+  name: MyString
+  goal: MyString
+  instruction: MyText
+  in: MyText
+  out: MyText
+
+two:
+  name: MyString
+  goal: MyString
+  instruction: MyText
+  in: MyText
+  out: MyText

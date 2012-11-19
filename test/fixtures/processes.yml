@@ -1,0 +1,11 @@
+one:
+  name: MyString
+  goal: MyText
+  person_id: 1
+  organization_id: 1
+
+two:
+  name: MyString
+  goal: MyText
+  person_id: 1
+  organization_id: 1
