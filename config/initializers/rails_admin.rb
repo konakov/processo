@@ -1,6 +1,7 @@
 require 'dragonfly/rails/images'
 
 RailsAdmin.config do |c|
+  c.main_app_name = ["Processo", "BackOffice"]
   c.excluded_models = [RelTest]
   c.authenticate_with {}
   c.current_user_method { User.first }

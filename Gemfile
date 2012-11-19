@@ -9,10 +9,15 @@ gem 'paperclip', '~> 2.4'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'dragonfly'
+gem 'haml'
+gem 'taps'
+gem "ckeditor", "3.7.1"
+gem 'heroku'
 group :production do
   gem 'pg'
 end
 group :development, :test do
+  gem 'nifty-generators'
   gem 'sqlite3'
 end
 group :assets do
@@ -20,3 +25,5 @@ group :assets do
   gem 'coffee-rails', '~> 3.1'
   gem 'uglifier', '~> 1.0'
 end
+
+gem "mocha", :group => :test

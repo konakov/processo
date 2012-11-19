@@ -11,13 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111123092549) do
-
-  create_table "balls", :force => true do |t|
-    t.string   "color"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20121119134818) do
 
   create_table "cms_basic_pages", :force => true do |t|
     t.string   "title"
@@ -26,92 +20,46 @@ ActiveRecord::Schema.define(:version => 20111123092549) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "comments", :force => true do |t|
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
-    t.text     "content"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
-  create_table "divisions", :primary_key => "custom_id", :force => true do |t|
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.integer  "custom_league_id"
-    t.string   "name",             :limit => 50, :null => false
-  end
-
-  create_table "drafts", :force => true do |t|
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.integer  "player_id"
-    t.integer  "team_id"
-    t.date     "date"
-    t.integer  "round"
-    t.integer  "pick"
-    t.integer  "overall"
-    t.string   "college",    :limit => 100
-    t.text     "notes"
-  end
-
-  create_table "fans", :force => true do |t|
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.string   "name",       :limit => 100, :null => false
-  end
-
   create_table "fans_teams", :id => false, :force => true do |t|
     t.integer "fan_id"
     t.integer "team_id"
   end
 
-  create_table "field_tests", :force => true do |t|
-    t.string   "string_field"
-    t.text     "text_field"
-    t.integer  "integer_field"
-    t.float    "float_field"
-    t.decimal  "decimal_field"
-    t.datetime "datetime_field"
-    t.datetime "timestamp_field"
-    t.time     "time_field"
-    t.date     "date_field"
-    t.boolean  "boolean_field"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.string   "format"
-    t.string   "restricted_field"
-    t.string   "protected_field"
-    t.string   "paperclip_asset_file_name"
-    t.string   "dragonfly_asset_uid"
-    t.string   "carrierwave_asset"
+  create_table "operations", :force => true do |t|
+    t.string   "name"
+    t.string   "goal"
+    t.text     "instruction"
+    t.text     "in"
+    t.text     "out"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  create_table "leagues", :force => true do |t|
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
-    t.string   "name",       :limit => 50, :null => false
+  create_table "organizations", :force => true do |t|
+    t.string   "name"
+    t.text     "information"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  create_table "nested_field_tests", :force => true do |t|
-    t.string   "title"
-    t.integer  "field_test_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "level_id"
+    t.integer  "organization_id"
+    t.boolean  "active"
+    t.text     "information"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
-  create_table "players", :force => true do |t|
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-    t.datetime "deleted_at"
-    t.integer  "team_id"
-    t.string   "name",       :limit => 100,                    :null => false
-    t.string   "position",   :limit => 50
-    t.integer  "number",                                       :null => false
-    t.boolean  "retired",                   :default => false
-    t.boolean  "injured",                   :default => false
-    t.date     "born_on"
-    t.text     "notes"
-    t.boolean  "suspended",                 :default => false
+  create_table "processes", :force => true do |t|
+    t.string   "name"
+    t.text     "goal"
+    t.integer  "person_id"
+    t.integer  "organization_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -131,23 +79,6 @@ ActiveRecord::Schema.define(:version => 20111123092549) do
     t.integer  "player_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-  end
-
-  create_table "teams", :force => true do |t|
-    t.datetime "created_at",                                                   :null => false
-    t.datetime "updated_at",                                                   :null => false
-    t.integer  "division_id"
-    t.string   "name",           :limit => 50
-    t.string   "logo_url"
-    t.string   "manager",        :limit => 100,                                :null => false
-    t.string   "ballpark",       :limit => 100
-    t.string   "mascot",         :limit => 100
-    t.integer  "founded"
-    t.integer  "wins"
-    t.integer  "losses"
-    t.float    "win_percentage"
-    t.decimal  "revenue",                       :precision => 18, :scale => 2
-    t.string   "color"
   end
 
   create_table "unscoped_pages", :force => true do |t|
