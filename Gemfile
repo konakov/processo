@@ -11,7 +11,7 @@ gem 'carrierwave'
 gem 'dragonfly'
 gem 'haml'
 gem 'taps'
-gem "ckeditor", "3.7.1"
+gem "ckeditor", "3.7.2"
 gem 'heroku'
 group :production do
   gem 'pg'
