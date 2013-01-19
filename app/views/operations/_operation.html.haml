@@ -1,2 +1,19 @@
-= operation.name
-= render operation.connections
+%b
+  = operation.name
+%p
+  %b Goal:
+  = operation.goal
+%p
+  %b Worker:
+  = operation.worker
+%p
+  %b Steps:
+  = operation.steps
+%h4 Inputs:
+= render operation.connections.where way: 'input'
+%h4 Outputs:
+= render operation.connections.where way: 'output'
+%p
+  %b Exceptions:
+  = operation.exceptions
+
