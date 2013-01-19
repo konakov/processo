@@ -9,6 +9,6 @@ window.add_fields = (link, association, content) ->
   $(link).before content.replace(regexp, new_id)
 
 window.remove_fields = (link) ->
-  $(link).prev("input[type=hidden]").val('1')
+  $(link).prev("input[type=hidden]").val('true')
   $(link).closest(".fields").hide()
   $(link).closest(".fields").find('input').removeAttr('required')
