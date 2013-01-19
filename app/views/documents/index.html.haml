@@ -16,8 +16,7 @@
       %td= document.description
       %td= document.purpose
       %td= document.metrics
-      %td= document.operations
-      %td= document.connections
+      %td= render document.operations
       %td= link_to 'Show', document
       %td= link_to 'Edit', edit_document_path(document)
       %td= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' }
