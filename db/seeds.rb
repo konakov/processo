@@ -5,3 +5,31 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+@input = Inoutput.create! body: 'input'
+@output = Inoutput.create! body: 'output'
+
+Document.create!(
+  name: 'Welcome',
+  description: 'Just basic document',
+  purpose: 'To be a test example',
+  metrics: 'Some metrics'
+)
+
+@operation = Operation.create!(
+  document_id: 1,
+  name: 'Operation #1',
+  goal: 'Testing',
+  worker: 'Developer',
+  steps: '1.2.3',
+  exceptions: 'Some exceptions'
+  #connections: [@input, @output]
+)
+
+Connection.create! operation: @operation, inoutput: @input, way: 'input'
+Connection.create! operation: @operation, inoutput: @output, way: 'output'
+
+
+
+
+
