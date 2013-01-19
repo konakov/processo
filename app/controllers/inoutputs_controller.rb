@@ -1,0 +1,2 @@
+class InoutputsController < ApplicationController
+end

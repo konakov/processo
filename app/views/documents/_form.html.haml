@@ -1,22 +1,16 @@
-= form_for @document do |f|
-  - if @document.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@document.errors.count, "error")} prohibited this document from being saved:"
-      %ul
-        - @document.errors.full_messages.each do |msg|
-          %li= msg
+= simple_form_for @document do |f|
+  = f.input :name
+  = f.input :description
+  = f.input :purpose
+  = f.simple_fields_for :operations do |p|
+    = p.input :name
+    = p.input :goal
+    = p.input :worker
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :purpose
-    = f.text_area :purpose
-  .field
-    = f.label :metrics
-    = f.text_area :metrics
-  .actions
-    = f.submit 'Save'
+    = p.simple_fields_for :connections do |q|
+      = render 'connections/form', f: q
+
+    = p.input :steps
+    = p.input :exceptions
+  = f.input :metrics
+  = f.submit 'Save'
