@@ -2,15 +2,10 @@
   = f.input :name
   = f.input :description
   = f.input :purpose
-  = f.simple_fields_for :operations do |p|
-    = p.input :name
-    = p.input :goal
-    = p.input :worker
-
-    = p.simple_fields_for :connections do |q|
-      = render 'connections/form', f: q
-
-    = p.input :steps
-    = p.input :exceptions
+  #operations
+    %h4 Operations
+    = f.simple_fields_for :operations do |p|
+      = render 'operation_fields', f: p
+    = link_to_add_fields "Add operation", f, :operations, class: 'btn btn-small btn-primary add-operation'
   = f.input :metrics
-  = f.submit 'Save'
+  = f.submit 'Save', class: 'btn'

@@ -1,0 +1,14 @@
+.fields
+  = f.input :name
+  = f.input :goal
+  = f.input :worker
+
+  %h4 Input/outputs
+  = f.simple_fields_for :connections do |p|
+    = render 'connection_fields', f: p
+  = link_to_add_fields "Add input/output", f, :connections, class: 'btn btn-small btn-blue'
+
+  = f.input :steps
+  = f.input :exceptions
+
+  = link_to_remove_fields "Remove operation", f, class: 'btn btn-small btn-danger'
