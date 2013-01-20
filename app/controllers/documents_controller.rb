@@ -25,7 +25,7 @@ class DocumentsController < ApplicationController
   # GET /documents/new.json
   def new
     @document = Document.new
-    @document.operations.build
+    @document.operations.build.build_inoutput
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +44,7 @@ class DocumentsController < ApplicationController
     @document = Document.new(params[:document])
 
     respond_to do |format|
-      if @document.save
+      if @document.create
         format.html { redirect_to @document, notice: 'Document was successfully created.' }
         format.json { render json: @document, status: :created, location: @document }
       else
@@ -61,6 +61,7 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       if @document.update_attributes(params[:document])
+        @document.operations.build
         format.html { redirect_to @document, notice: 'Document was successfully updated.' }
         format.json { head :no_content }
       else
