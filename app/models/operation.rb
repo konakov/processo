@@ -1,7 +1,6 @@
 class Operation < ActiveRecord::Base
   attr_accessible :document_id, :exceptions, :goal, :name, :steps, :worker, :connections, :connections_attributes
 
-  validates :document_id, presence: true
   validates :exceptions, presence: true
   validates :goal, presence: true
   validates :name, presence: true

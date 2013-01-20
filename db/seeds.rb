@@ -10,7 +10,7 @@
 @output = Inoutput.create! body: 'output'
 
 Document.create!(
-  name: 'Welcome',
+  name: 'Welcome, you',
   description: 'Just basic document',
   purpose: 'To be a test example',
   metrics: 'Some metrics'

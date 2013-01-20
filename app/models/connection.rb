@@ -1,8 +1,7 @@
 class Connection < ActiveRecord::Base
 
-  attr_accessible :operation, :inoutput, :way, :inoutput_attributes, :inoutput_body
+  attr_accessible :operation_id, :inoutput, :way, :inoutput_attributes, :inoutput_body
 
-  validates :operation, presence: true
   validates :inoutput, presence: true
   validate :way_value
 

@@ -1,5 +1,5 @@
 class Document < ActiveRecord::Base
-  attr_accessible :description, :metrics, :name, :purpose, :operations_attributes
+  attr_accessible :description, :operation_id, :metrics, :name, :purpose, :operations_attributes
   has_many :operations
 
   validates :description, presence: true
