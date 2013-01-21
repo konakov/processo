@@ -1,5 +1,9 @@
 Processo::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   resources :documents
+
+  mount Ckeditor::Engine => "/ckeditor"
 
   root to: "documents#index"
 

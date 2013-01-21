@@ -9,7 +9,7 @@
     = render 'connection_fields', f: p
   = link_to_add_fields "Add input/output", f, :connections, class: 'btn btn-small btn-blue'
 
-  = f.input :steps
+  = f.input :steps, as: :ckeditor, input_html: { ckeditor: { toolbar: 'MyToolbar' } }
   = f.input :exceptions
 
   = link_to_remove_fields "Remove operation", f, class: 'btn btn-small btn-danger'
