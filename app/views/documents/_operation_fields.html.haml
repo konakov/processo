@@ -7,7 +7,7 @@
   %h4 Input/outputs
   = f.simple_fields_for :connections do |p|
     = render 'connection_fields', f: p
-  = link_to_add_fields "Add input/output", f, :connections, class: 'btn btn-small btn-blue'
+  = link_to_add_fields "Add input/output", f, :connections, class: 'btn btn-small btn-blue add_inoutput'
 
   = f.input :steps, as: :ckeditor, input_html: { ckeditor: { toolbar: 'ImagesAndTables' } }
   = f.input :exceptions
