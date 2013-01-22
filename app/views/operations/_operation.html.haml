@@ -1,19 +1,28 @@
-%b Name:
-= operation.name
-%p
-  %b Goal:
-  = operation.goal
-%p
-  %b Worker:
-  = operation.worker
-%p
-  %b Steps:
-  =raw operation.steps
-%h4 Inputs:
-= render operation.connections.where way: 'input'
-%h4 Outputs:
-= render operation.connections.where way: 'output'
-%p
-  %b Exceptions:
-  = operation.exceptions
+.operation
+  = link_to operation.name, '#'
+  .info
+    %h4 Goal:
+    %p
+      = operation.goal
+    %h4 Worker:
+    %p
+      = operation.worker
+    %h4 Steps:
+    %p
+      =raw operation.steps
+    %h4 Inputs:
+    - if operation.connections.where(way: 'input').count > 0
+      %ul
+        = render operation.connections.where way: 'input'
+    - else
+      No inputs
+    %h4 Outputs:
+    - if operation.connections.where(way: 'output').count > 0
+      %ul
+        = render operation.connections.where way: 'output'
+    - else
+      No outputs
+    %h4 Exceptions:
+    %p
+      = operation.exceptions
 

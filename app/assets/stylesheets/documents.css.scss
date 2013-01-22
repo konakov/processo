@@ -7,12 +7,74 @@
     width: 400px;
     height: 100px;
   }
-}
+  .collection_radio_buttons {
+    display: inline-block;
+    margin-top: 2px;
+    margin-left: 5px;
+    margin-right: 10px;
+    position: relative;
+    top: 4px;
+  }
 
-#operations {
-  margin-left: 40px;
+  h4, #open-operations {
+    display: inline-block;
+  }
+  .operation {
+    width: 800px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    background: #eee;
+    margin-bottom: 20px;
+  }
+  .inoutput {
+    box-shadow: 0 0 3px #000;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+  }
+  .input_or_output {
+    margin: 5px 0 15px 0;
+  }
+  .remove_inoutput {
+    margin-bottom: 10px;
+  }
+  .add_inoutput {
+    margin: 20px 0;
+    display: block;
+    width: 110px;
+  }
 }
 
 .add-operation {
   margin: 20px 0
+}
+
+.document {
+  h4 {
+    font-size: 14px;
+    color: #777;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+  p, li {
+    font-size: 16px;
+  }
+  h3 {
+    font-size: 16px;
+    color: #555;
+  }
+  #operations {
+    .operation {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      background: #eee;
+      max-width: 600px;
+
+      a {
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+      }
+    }
+  }
 }

@@ -1,22 +1,21 @@
-%p#notice= notice
+.document
+  %h2
+    = @document.name
+  %h4 Description:
+  %p
+    = @document.description
+  %h4 Purpose:
+  %p
+    = @document.purpose
 
-%p
-  %b Name:
-  = @document.name
-%p
-  %b Description:
-  = @document.description
-%p
-  %b Purpose:
-  = @document.purpose
+  %h3 Operations:
+  #operations
+    = render @document.operations
 
-%h3 Operations:
-= render @document.operations
+  %h4 Metrics:
+  %p
+    = @document.metrics
 
-%p
-  %b Metrics:
-  = @document.metrics
-
-= link_to 'Edit', edit_document_path(@document)
-\|
-= link_to 'Back', documents_path
+  = link_to 'Edit', edit_document_path(@document)
+  \|
+  = link_to 'Back', documents_path

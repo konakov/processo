@@ -1,6 +1,7 @@
-.fields
+.fields.inoutput
   = f.hidden_field :operation_id
-  = f.collection_radio_buttons :way, [['input', 'Input'] ,['output', 'Output']], :first, :last
-  = f.association :inoutput, label_method: :body, value_method: :id, include_blank: 'New input/output', wrapper_html: { class: 'inoutput_association' }
-  = f.input :inoutput_body, wrapper_html: { class: 'inoutput_body_input' }
+  .input_or_output
+    = f.collection_radio_buttons :way, [['input', 'Input'] ,['output', 'Output']], :first, :last
+  = f.association :inoutput, label_method: :body, value_method: :id, include_blank: 'New input/output', wrapper_html: { class: 'inoutput_association' }, label: 'Select existing one'
+  = f.input :inoutput_body, wrapper_html: { class: 'inoutput_body_input' }, label: 'Or create new'
   = link_to_remove_fields "Remove input/output", f, class: 'btn btn-small btn-danger remove_inoutput'

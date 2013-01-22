@@ -21,7 +21,6 @@ $.fn.toggleInputs = ( other_selector ) ->
           'disabled': true
           'value': ''
       else
-        console.log "empty"
         el.siblings(other_selector).find(settings.input_tags).attr
           'required': true
           'disabled': false
@@ -46,3 +45,14 @@ $ ->
     $('.add_inoutput').click ->
       $('.inoutput_association').toggleInputs('.inoutput_body_input')
       $('.inoutput_body_input').toggleInputs('.inoutput_association')
+
+    $('#operations').hide()
+    $('#open-operations').click ->
+      $('#operations').toggle()
+
+  # Show page
+  if $('.document').length
+
+    $('#operations .info').hide()
+    $('.operation a').click ->
+      $(this).next().toggle()

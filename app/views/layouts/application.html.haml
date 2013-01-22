@@ -8,4 +8,8 @@
   %body
     .row
       .container
+        - logger.debug "#{flash}"
+        - flash.each do |name,msg|
+          .alert(class="alert-#{name == :notice ? 'succes' : 'error'}")
+            = msg
         = yield
