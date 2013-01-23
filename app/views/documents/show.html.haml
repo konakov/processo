@@ -10,7 +10,7 @@
 
   %h3 Operations:
   #operations
-    = render @document.operations
+    = render @document.operations.order :name
 
   %h4 Metrics:
   %p
