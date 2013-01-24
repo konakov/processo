@@ -157,7 +157,7 @@ describe DocumentsController do
     it "redirects to the documents list" do
       document = Document.create! valid_attributes
       delete :destroy, {:id => document.to_param}, valid_session
-      response.should redirect_to(documents_url)
+      response.should redirect_to(documents_path)
     end
   end
 

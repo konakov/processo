@@ -9,12 +9,7 @@ describe "Documents pages" do
 
     describe "with invalid information" do
       it "should not create a document" do
-        expect { click_button "Save" }.not_to change(:Document, :count)
-      end
-
-      it "should show error messages" do
-        before { click_button "Save" }
-        it { should have_content 'error' }
+        expect { click_button "Save" }.not_to change(Document, :count)
       end
     end
 
@@ -24,11 +19,15 @@ describe "Documents pages" do
         fill_in 'document_description', with: 'Lorem Ipsum'
         fill_in 'document_metrics', with: 'Lorem Ipsum'
         fill_in 'document_purpose', with: 'Lorem Ipsum'
-        fill_in 'document_metrics', with: 'Lorem Ipsum'
+        fill_in 'document_operations_attributes_0_name', with: 'Lorem Ipsum'
+        fill_in 'document_operations_attributes_0_goal', with: 'Lorem Ipsum'
+        fill_in 'document_operations_attributes_0_steps', with: 'Lorem Ipsum'
+        fill_in 'document_operations_attributes_0_exceptions', with: 'Lorem Ipsum'
+        fill_in 'document_operations_attributes_0_worker', with: 'Lorem Ipsum'
       end
 
       it "should create a document" do
-        expect { click_button "Save" }.not_to change(:Document, :count).by(1)
+        expect { click_button "Save" }.to change(Document, :count).by(1)
       end
 
     end
