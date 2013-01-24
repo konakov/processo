@@ -5,7 +5,6 @@ class Connection < ActiveRecord::Base
   validates :inoutput, presence: true
   validate :way_value
 
-
   belongs_to :operation
   belongs_to :inoutput
 

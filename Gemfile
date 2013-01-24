@@ -46,6 +46,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem "ckeditor"
 gem "carrierwave"
+gem 'faker'
 gem "mini_magick"
 
 # To use ActiveModel has_secure_password
