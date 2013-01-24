@@ -9,7 +9,7 @@ class Operation < ActiveRecord::Base
 
   belongs_to :document
 
-  has_many :connections
+  has_many :connections, dependent: :destroy
   has_many :inoutputs, through: :connections
 
   accepts_nested_attributes_for :connections, allow_destroy: true
