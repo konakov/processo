@@ -14,5 +14,3 @@ window.remove_fields = (link) ->
   $(link).closest(".fields").hide()
   $(link).closest(".fields").find('input').removeAttr('required')
 
-$ ->
-  $('#cke_57').hide().parents().show()
