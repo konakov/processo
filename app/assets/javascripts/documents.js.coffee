@@ -40,7 +40,11 @@ $ ->
     $('.inoutput_association').toggleInputs('.inoutput_body_input')
     $('.inoutput_body_input').toggleInputs('.inoutput_association')
 
+    CKEDITOR.replace( $('.ckeditor textarea:not(:last-child)').attr 'id' )
+
+
   if $('.edit_document').length or $('.new_document').length
+
 
     $('.add_inoutput').click ->
       $('.inoutput_association').toggleInputs('.inoutput_body_input')
@@ -49,6 +53,9 @@ $ ->
     $('#operations').hide()
     $('#open-operations').click ->
       $('#operations').toggle()
+
+    $('.add-operation').click ->
+      CKEDITOR.replace( $('.ckeditor textarea').last().attr 'id' )
 
   # Show page
   if $('.document').length
