@@ -15,6 +15,7 @@ describe Operation do
   it { should respond_to :document }
   it { should respond_to :connections }
   it { should respond_to :inoutputs }
+  it { should respond_to :rank }
 
   describe "with invalid attributes" do
     after(:each) do

@@ -26,6 +26,15 @@
     background: #eee;
     margin-bottom: 20px;
   }
+  .name_input {
+    float: left;
+    margin-right: 20px;
+  }
+  .rank_input {
+    input {
+      width: 100px;
+    }
+  }
   .inoutput {
     box-shadow: 0 0 3px #000;
     padding: 5px 10px;
